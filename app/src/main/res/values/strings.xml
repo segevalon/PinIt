@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">PinIt</string>
+    <string name="title_activity_maps">Map</string>
+
+
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="new_user">New User</string>
+    <string name="new_post">New Post</string>
+    <string name="post_title">Post Title</string>
+    <string name="post_content">Post Content</string>
+    <string name="save">Save</string>
+    <string name="i_already_have_a_user">I already have a user</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="back">Back</string>
+    <string name="enter_the_email">Enter the email you registered with.. \n so we can send you a password reset link</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="post_details">Post Details</string>
+    <string name="publish_limit">You can publish 1 post per minute</string>
+
+    <string name="email_is_empty">Email is empty</string>
+    <string name="password_is_empty">Password is empty</string>
+    <string name="password_at_least_6">Password must be at least 6 characters </string>
+    <string name="failed_to_login">Failed to login</string>
+    <string name="failed_create_user">Failed to create user"</string>
+    <string name="user_created_successfully">User created successfully</string>
+    <string name="instructions_reset_password">We have sent you instructions to reset your password!</string>
+    <string name="failed_reset_email">Failed to send reset email!</string>
+
+
+</resources>

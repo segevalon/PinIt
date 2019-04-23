@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="@string/new_post"
+        android:textColor="@color/text_color"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/post_title_edit"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:hint="@string/post_title"
+        android:inputType="text"
+        android:textColor="@color/text_field_color" />
+
+    <EditText
+        android:id="@+id/post_content_edit"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:hint="@string/post_content"
+        android:inputType="text"
+        android:lines="8"
+        android:textColor="@color/text_field_color" />
+
+    <ImageView
+        android:id="@+id/image_from_camera"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/image_border"
+        android:padding="5dp"
+        android:src="@drawable/camera_icon" />
+
+
+    <Button
+        android:id="@+id/create_post_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/rounded_button_red"
+        android:padding="10dp"
+        android:text="@string/save"
+        android:textAllCaps="false"
+        android:textColor="@color/text_btn_color"
+        android:textSize="15sp" />
+
+</LinearLayout>

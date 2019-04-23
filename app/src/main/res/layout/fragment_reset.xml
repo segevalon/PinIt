@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="@string/forgot_password"
+        android:textColor="@color/text_color"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="@string/enter_the_email"
+        android:textColor="@color/text_color"
+        android:textSize="14sp" />
+
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/text_field_color" />
+
+
+    <Button
+        android:id="@+id/btn_reset_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/rounded_button_red"
+        android:padding="10dp"
+        android:text="@string/reset_password"
+        android:textAllCaps="false"
+        android:textColor="@color/text_btn_color"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/rounded_button_red"
+        android:text="@string/back"
+        android:textAllCaps="false"
+        android:textColor="@color/text_btn_color"
+        android:textSize="15sp" />
+
+</LinearLayout>

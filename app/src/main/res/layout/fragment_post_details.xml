@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/post_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:gravity="left"
+        android:text="date"
+        android:textColor="@color/text_color"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/post_title_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/post_date"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="title"
+        android:textColor="@color/text_color"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/post_owner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/post_title_text"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="owner"
+        android:textColor="@color/text_color"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/post_content_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/image_from_camera"
+        android:layout_below="@id/post_owner"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="content"
+        android:textColor="@color/text_color" />
+
+
+    <ImageView
+        android:id="@+id/image_from_camera"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/image_border"
+        android:padding="5dp" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:padding="80dp" />
+
+</RelativeLayout>

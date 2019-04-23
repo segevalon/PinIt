@@ -11,42 +11,38 @@ import android.widget.EditText;
 
 import com.sa.pinit.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class RegisterFragment extends Fragment implements RegisterInterface.View, View.OnClickListener {
 
     private String TAG = "RegisterFragment";
     private RegisterPresenter presenter;
-    private EditText editTextEmail, editTextPassword;
 
-//    @BindView(R.id.btn_login)
-//    Button btnLogin;
-//    @BindView(R.id.btn_signup)
-//    Button btnSignUp;
-//    @BindView(R.id.btn_reset_password)
-//    Button btnResetPassword;
-//    @BindView(R.id.email)
-//    EditText editTextEmail;
-//    @BindView(R.id.password)
-//    EditText editTextPassword;
+
+    @BindView(R.id.btn_login)
+    Button btnLogin;
+    @BindView(R.id.btn_signup)
+    Button btnSignUp;
+    @BindView(R.id.btn_reset_password)
+    Button btnResetPassword;
+    @BindView(R.id.email)
+    EditText editTextEmail;
+    @BindView(R.id.password)
+    EditText editTextPassword;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView()");
         View view = inflater.inflate(R.layout.fragment_register, container, false);
-//        ButterKnife.bind(view);
+        ButterKnife.bind(this, view);
 
         presenter = RegisterPresenter.getInstance();
         presenter.onAttach(this);
 
-        Button btnLogin = view.findViewById(R.id.btn_login);
         btnLogin.setOnClickListener(this);
-        Button btnSignUp = view.findViewById(R.id.btn_signup);
         btnSignUp.setOnClickListener(this);
-        Button btnResetPassword = view.findViewById(R.id.btn_reset_password);
         btnResetPassword.setOnClickListener(this);
-        editTextEmail = view.findViewById(R.id.email);
-        editTextPassword = view.findViewById(R.id.password);
-
-
         return view;
     }
 

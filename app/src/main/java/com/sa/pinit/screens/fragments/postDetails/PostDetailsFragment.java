@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -27,16 +28,29 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class PostDetailsFragment extends Fragment implements PostDetailsInterface.View {
 
     private final String TAG = "PostDetailsFragment";
     private PostDetailsPresenter presenter;
     private Post post;
     private String markerId;
-    TextView postTitleText, postContentText, postOwnerText, postDateText;
-    ImageView imageFromCamera;
-    ProgressBar progress;
     private static StorageReference mStorageRef;
+
+    @BindView(R.id.post_title_text)
+    TextView postTitleText;
+    @BindView(R.id.post_content_text)
+    TextView postContentText;
+    @BindView(R.id.post_owner)
+    TextView postOwnerText;
+    @BindView(R.id.post_date)
+    TextView postDateText;
+    @BindView(R.id.image_from_camera)
+    ImageView imageFromCamera;
+    @BindView(R.id.progress)
+    ProgressBar progress;
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -50,14 +64,9 @@ public class PostDetailsFragment extends Fragment implements PostDetailsInterfac
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_post_details, container, false);
-        mStorageRef = FirebaseStorage.getInstance().getReference();
-        postTitleText = view.findViewById(R.id.post_title_text);
-        postContentText = view.findViewById(R.id.post_content_text);
-        postOwnerText = view.findViewById(R.id.post_owner);
-        postDateText = view.findViewById(R.id.post_date);
-        imageFromCamera = view.findViewById(R.id.image_from_camera);
-        progress = view.findViewById(R.id.progress);
+        ButterKnife.bind(this, view);
 
+        mStorageRef = FirebaseStorage.getInstance().getReference();
         presenter = PostDetailsPresenter.getInstance();
         presenter.onAttach(this);
         post = presenter.getPostByMarkerId(markerId);

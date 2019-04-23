@@ -11,35 +11,33 @@ import android.widget.EditText;
 
 import com.sa.pinit.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class ResetFragment extends Fragment implements ResetInterface.View, View.OnClickListener {
 
     private String TAG = " ResetFragment";
     private ResetPresenter presenter;
-    private EditText editTextEmail;
 
-//    @BindView(R.id.email)
-//    EditText editTextEmail;
-//    @BindView(R.id.btn_reset_password)
-//    Button btnReset;
-//    @BindView(R.id.btn_back)
-//    Button btnBack;
+    @BindView(R.id.email)
+    EditText editTextEmail;
+    @BindView(R.id.btn_reset_password)
+    Button btnReset;
+    @BindView(R.id.btn_back)
+    Button btnBack;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView()");
         View view = inflater.inflate(R.layout.fragment_reset, container, false);
-        //ButterKnife.bind(view);
+        ButterKnife.bind(this, view);
 
         presenter = ResetPresenter.getInstance();
         presenter.onAttach(this);
 
-        editTextEmail = view.findViewById(R.id.email);
-        Button btnReset = view.findViewById(R.id.btn_reset_password);
         btnReset.setOnClickListener(this);
-        Button btnBack = view.findViewById(R.id.btn_back);
         btnBack.setOnClickListener(this);
-
         return view;
     }
 

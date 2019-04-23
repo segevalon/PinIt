@@ -4,6 +4,7 @@ import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +26,8 @@ import com.sa.pinit.screens.activities.main.MainPresenter;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import im.delight.android.location.SimpleLocation;
 
 public class MapFragment extends Fragment implements MapInterface.View, OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener, View.OnClickListener {
@@ -37,21 +40,18 @@ public class MapFragment extends Fragment implements MapInterface.View, OnMapRea
     private Location location = null;
     InfoWindowAdapter adapter;
 
+    @BindView(R.id.map)
+    MapView mapView;
+    @BindView(R.id.create_new_post_btn)
+    Button createPostBtn;
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.d(TAG, "onCreate()");
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Log.d(TAG, "onCreateView()");
         View view = inflater.inflate(R.layout.fragment_map, container, false);
+        ButterKnife.bind(this, view);
 
-        Button createPostBtn = view.findViewById(R.id.create_new_post_btn);
         createPostBtn.setOnClickListener(this);
-        MapView mapView = view.findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
         mapView.onResume();
         mapView.getMapAsync(this);

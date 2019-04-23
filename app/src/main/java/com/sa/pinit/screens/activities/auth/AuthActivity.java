@@ -39,7 +39,6 @@ public class AuthActivity extends AppCompatActivity implements AuthInterface.Vie
         setContentView(R.layout.activity_auth);
 
         dialog = new ProgressDialog(this);
-
         auth = FirebaseAuth.getInstance();
         if (auth.getCurrentUser() != null) {
             startActivity(new Intent(this, MainActivity.class));

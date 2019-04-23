@@ -10,10 +10,18 @@ import android.widget.RelativeLayout;
 import com.sa.pinit.R;
 import com.sa.pinit.screens.fragments.map.MapPresenter;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class ZoomButtons extends RelativeLayout implements View.OnClickListener {
 
     LayoutInflater mInflater;
     MapPresenter mapPresenter;
+    @BindView(R.id.plus_btn)
+    Button plus;
+    @BindView(R.id.minus_btn)
+    Button minus;
+
 
     public ZoomButtons(Context context) {
         super(context);
@@ -35,9 +43,9 @@ public class ZoomButtons extends RelativeLayout implements View.OnClickListener 
 
     public void init() {
         View v = mInflater.inflate(R.layout.zoom_buttons, this, true);
-        Button plus = v.findViewById(R.id.plus_btn);
+        ButterKnife.bind(this, v);
+
         plus.setOnClickListener(this);
-        Button minus = v.findViewById(R.id.minus_btn);
         minus.setOnClickListener(this);
         mapPresenter = MapPresenter.getInstance();
     }

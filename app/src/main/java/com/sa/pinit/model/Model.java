@@ -102,6 +102,8 @@ public class Model implements ModelInterface {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
                     lastPostAddedTimeStamp = new Date().getTime();
+                    myPostList.add(post);
+                    allPostList.add(post);
                 }
             }
         });

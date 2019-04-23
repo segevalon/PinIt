@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,7 +13,8 @@ import com.sa.pinit.R;
 import com.sa.pinit.model.Model;
 import com.sa.pinit.model.Post;
 
-import java.util.ArrayList;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
@@ -56,17 +56,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        //            implements View.OnClickListener
-//    {
-        TextView title, date;
+
+        @BindView(R.id.title)
+        TextView title;
+        @BindView(R.id.date)
+        TextView date;
+        @BindView(R.id.remove_btn)
         ImageView removeBtn;
+
 
         public ViewHolder(View itemView) {
             super(itemView);
-
-            title = itemView.findViewById(R.id.title);
-            date = itemView.findViewById(R.id.date);
-            removeBtn = itemView.findViewById(R.id.remove_btn);
+            ButterKnife.bind(this, itemView);
             removeBtn.setOnClickListener(this);
         }
 

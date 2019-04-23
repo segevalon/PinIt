@@ -19,6 +19,8 @@ import com.sa.pinit.model.Post;
 import java.io.File;
 import java.util.Date;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import im.delight.android.location.SimpleLocation;
 
 
@@ -27,20 +29,21 @@ public class PostCreateFragment extends Fragment implements PostCreateInterface.
     private String TAG = "PostCreateFragment";
     private View view;
     private PostCreatePresenter presenter;
+    @BindView(R.id.create_post_btn)
     Button createPostBtn;
-    EditText postTitleEdit, postContentEdit;
+    @BindView(R.id.post_title_edit)
+    EditText postTitleEdit;
+    @BindView(R.id.post_content_edit)
+    EditText postContentEdit;
+    @BindView(R.id.image_from_camera)
     ImageView imageFromCamera;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_post_create, container, false);
+        ButterKnife.bind(this, view);
 
-        postTitleEdit = view.findViewById(R.id.post_title_edit);
-
-        postContentEdit = view.findViewById(R.id.post_content_edit);
-        createPostBtn = view.findViewById(R.id.create_post_btn);
         createPostBtn.setOnClickListener(this);
-        imageFromCamera = view.findViewById(R.id.image_from_camera);
         imageFromCamera.setOnClickListener(this);
         presenter = PostCreatePresenter.getInstance();
         presenter.onAttach(this);
